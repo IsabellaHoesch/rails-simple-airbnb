@@ -1,0 +1,17 @@
+<%= simple_form_for(@flat) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :price_per_night, as: :numeric %>
+    <%= f.input :number_of_guests, as: :numeric %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-info"%>
+    <%= link_to 'Back', flats_path, class: "btn btn-info"%>
+  </div>
+<% end %>

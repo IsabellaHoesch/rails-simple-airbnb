@@ -1,0 +1,12 @@
+
+<p id="notice"><%= notice %></p>
+<div class="card">
+  <h5 class="card-header"><%= @flat.name %></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= @flat.address %></h5>
+    <p class="card-text"><%= @flat.description %></p>
+    <%= link_to 'Edit', edit_flat_path(@flat),class: "btn btn-info"  %> 
+    <%= link_to 'Back', flats_path, class: "btn btn-info"  %>
+    <%= link_to 'Remove flat from database', flat_path(@flat), method: 'delete', data: { confirm: "Are you sure?" }, class: "btn btn-info"  %>
+  </div>
+</div>
